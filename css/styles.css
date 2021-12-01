@@ -23,7 +23,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: banner 2s 3s ease-in-out;
+}
+.bannerAnimation {
+  animation: banner 1s ease-in-out;
 }
 @keyframes banner {
   0% {
@@ -34,6 +36,13 @@ body {
   }
 }
 .banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 65;
+  position: absolute;
+}
+.banner-text h1 {
   font-size: 3rem;
   color: rgb(158, 4, 158);
   letter-spacing: 0.7rem;
@@ -41,6 +50,20 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Nunito", sans-serif;
+}
+.banner-text .banner-enter {
+  font-family: "Nunito", sans-serif;
+  color: deeppink;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px dashed deeppink;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.banner-text .banner-enter:hover {
+  border-style: solid;
 }
 @keyframes text {
   0% {
@@ -64,6 +87,19 @@ body {
 @keyframes heartFall {
   100% {
     top: 50vh;
+    opacity: 0;
+  }
+}
+.heartBlink {
+  position: absolute;
+  animation: heartBlink 4s ease-in-out infinite;
+  opacity: 1;
+  color: pink;
+  font-size: 1.2rem;
+  z-index: 60;
+}
+@keyframes heartBlink {
+  100% {
     opacity: 0;
   }
 }
@@ -737,6 +773,9 @@ body {
   .banner-text {
     font-size: 1.2rem;
   }
+  .banner-text .banner-enter h3{
+    font-size: .8rem;
+  }
   .heartFall {
     animation: heartFall 2s ease-in-out;
   }
@@ -784,6 +823,10 @@ body {
   }
   .text {
     font-size: 2.5rem;
+  }
+  .flower {
+    width: 20vw;
+    padding-top: 0.2rem;
   }
   .bride-groom {
     padding: 0 0.7rem;
@@ -861,5 +904,3 @@ body {
     font-weight: bold;
   }
 }
-/*     font-size: 0.9rem;
-    font-weight: 500; */
