@@ -38,6 +38,8 @@ body {
   color: rgb(158, 4, 158);
   letter-spacing: 0.7rem;
   animation: text 3s ease-in-out infinite;
+  justify-content: center;
+  align-items: center;
   font-family: "Nunito", sans-serif;
 }
 @keyframes text {
@@ -340,9 +342,20 @@ body {
   height: auto;
   background-size: cover;
 }
-.couple-container .couple-para {
+.couple-container .couple-para h3 {
+  font-size: 1.5rem;
   font-family: "Nunito", sans-serif;
   text-align: center;
+}
+.couple-container .couple-para h3 span {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+}
+.couple-container .couple-para h3 .couple-name {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .container-bg {
   padding: 3rem;
@@ -750,8 +763,8 @@ body {
     font-size: 1.7rem;
   }
   .subtitle {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
   }
   .symb {
     font-size: 1rem;
@@ -771,6 +784,21 @@ body {
   }
   .text {
     font-size: 2.5rem;
+  }
+  .bride-groom {
+    padding: 0 0.7rem;
+  }
+  .couple-container .couple-para h3 {
+    font-size: 1rem;
+    font-family: "Raleway", sans-serif;
+  }
+  .couple-container .couple-para h3 span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: "Nunito", sans-serif;
+  }
+  .couple-container .couple-para h3 .couple-name {
+    font-size: 1.2rem;
   }
   .event-desc {
     flex-direction: column;
@@ -833,3 +861,5 @@ body {
     font-weight: bold;
   }
 }
+/*     font-size: 0.9rem;
+    font-weight: 500; */

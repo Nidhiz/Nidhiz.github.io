@@ -15,19 +15,6 @@ function playMusic() {
   }
 }
 
-function heartFall() {
-  let heart = document.createElement("span");
-
-  heart.innerHTML = "❤";
-  heart.classList.add("heartFall");
-  document.body.appendChild(heart);
-
-  heart.style.fontSize = (Math.random() * 1 + 0.8) + "rem";
-  heart.style.left = (Math.random() * 100) + "vw";
-  heart.style.top = -(Math.random() * 10 + 5) + "vh";
-  heart.style.animationDuration = Math.random() * 4 + 2 + "s";
-}
-
 document.addEventListener("DOMContentLoaded", function (e) {
   playMusic();
 
@@ -39,3 +26,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   }, 5000)
 })
+
+function heartFall() {
+  let heart = document.createElement("span");
+
+  heart.innerHTML = "❤";
+  heart.classList.add("heartFall");
+  document.body.appendChild(heart);
+
+  heart.style.fontSize = (Math.random() * 1 + 0.8) + "rem";
+  heart.style.left = (Math.random() * 100) + "vw";
+  heart.style.top = -(Math.random() * 10 + 5) + "vh";
+  heart.style.animationDuration = Math.random() * 4 + 2 + "s";
+
+}
