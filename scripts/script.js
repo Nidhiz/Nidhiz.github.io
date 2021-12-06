@@ -38,7 +38,7 @@ function playMusic() {
 function heartFall() {
   let heart = document.createElement("span");
 
-  heart.innerHTML = "♥";
+  heart.innerHTML = "❤";
   heart.classList.add("heartFall");
   document.body.appendChild(heart);
 
