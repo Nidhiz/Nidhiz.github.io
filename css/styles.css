@@ -205,8 +205,8 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
 }
 .overlay-clr {
   background-color: rgba(0, 0, 0, 0.45);
@@ -446,6 +446,72 @@ body {
 .center-text span::after {
   left: 100%;
 }
+.carousel {
+  width: 100vw;
+  height: auto;
+  aspect-ratio: 1280 / 853;
+  position: relative;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
 .map {
   padding: 2rem;
   width: 100%;
@@ -520,13 +586,13 @@ body {
   background-position: center;
 }
 .event-img-haldi {
-  background-image: url(/images/Haldi-photo.jpg);
+  background-image: url(/images/mehendi.jpg);
 }
 .event-img-wedding {
-  background-image: url(/images/wedding.jpg);
+  background-image: url(/images/Haldi-photo.jpg);
 }
 .event-img-recp {
-  background-image: url(/images/Reception.jpg);
+  background-image: url(/images/wedding.jpg);
 }
 .event-desc:hover .event-img-haldi,
 .event-desc:hover .event-img-recp {
@@ -773,8 +839,8 @@ body {
   .banner-text {
     font-size: 1.2rem;
   }
-  .banner-text .banner-enter h3{
-    font-size: .8rem;
+  .banner-text .banner-enter h3 {
+    font-size: 0.8rem;
   }
   .heartFall {
     animation: heartFall 2s ease-in-out;

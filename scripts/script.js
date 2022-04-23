@@ -6,6 +6,7 @@ let fallCount = 100;
 let blinkCount = 10;
 let heartBlinks = [];
 let blinkInterval = null;
+let slideInterval = null;
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
@@ -51,7 +52,7 @@ function heartFall() {
 function heartBlink() {
   let heart = document.createElement("span");
 
-  heart.innerHTML = "♥";
+  heart.innerHTML = "❤";
   heart.classList.add("heartBlink");
   document.body.appendChild(heart);
 
@@ -68,7 +69,7 @@ function setPos(heart) {
 
   heart.style.left = left + "px";
   heart.style.top = top + "px";
-  
+
   if (heart.offsetLeft + heart.offsetWidth > vw) {
     heart.style.left = vw - heart.offsetWidth - 1;
   }
@@ -91,3 +92,30 @@ function blink() {
 }
 
 blink();
+
+const buttons = document.querySelectorAll("[data-carousel-button]")
+const slides = document.querySelector("[data-slides]")
+
+buttons.forEach(button => {
+  const offset = button.dataset.carouselButton === "next" ? 1 : -1
+
+  button.addEventListener("click", () => {
+    slider(slides, offset);
+  
+  }) 
+})
+
+slideInterval = setInterval(function () {
+  slider(slides, 1)
+}, 2500);
+
+function slider(slides, offset) {
+  const activeSlide = slides.querySelector("[data-active]")
+  let newIndex = [...slides.children].indexOf(activeSlide) + offset
+
+  if (newIndex < 0) newIndex = slides.children.length - 1
+  if (newIndex >= slides.children.length) newIndex = 0
+
+  slides.children[newIndex].dataset.active = true
+  delete activeSlide.dataset.active
+}
